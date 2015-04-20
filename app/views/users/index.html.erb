@@ -1,0 +1,18 @@
+<% if logged_in? %>
+  <p>Hi, <%= current_user.username %>!</p>
+  <p>You've logged in <%= current_user.counter %> time(s)!</p>
+  <%= link_to logout_path do %>
+    <button id="logout_btn">Logout</button>
+  <% end %>
+  
+<% else %>
+  <label for="username_input">Username</label><br>
+  <input id="username_input"><br><br>
+  
+  <label for="password_input">Password</label><br>
+  <input id="password_input" type="password"><br><br>
+  
+  <button id="login_btn">Login</button>
+  <button id="signup_btn">Add User</button>
+  
+<% end %>
