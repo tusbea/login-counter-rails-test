@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       @user.counter += 1
       @user.save
       log_in @user
-      render :json => { username: params[:username], login_count: @user.counter }
+      render :json => { user_name: params[:username], login_count: @user.counter }
     else
       render :json => { error_code: -4 }
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user.counter = 1
     if @user.save
       log_in @user
-      render :json => { username: params[:username], login_count: @user.counter }
+      render :json => { user_name: params[:username], login_count: @user.counter }
     else
       error_flag = [false, false, false]
       
