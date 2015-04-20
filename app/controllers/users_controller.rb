@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   include UsersHelper
   skip_before_filter :verify_authenticity_token
   
+  def user_count
+    render :json => { user_count: User.all.count }
+  end
+
   def index
   end
   
